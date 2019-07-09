@@ -2,16 +2,15 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './src/index.js',
+ // entry: './src/main.js',
+  entry: './src/lib/index.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    //filename: 'build.js',
-	filename: 'vue-easy-cron.js' ,
+   filename: 'vue-easy-cron.js' ,
     library: 'vue-easy-cron', 
     libraryTarget: 'umd',
 	umdNamedDefine: true 
-
   },
   module: {
     rules: [
@@ -21,21 +20,11 @@ module.exports = {
           'vue-style-loader',
           'css-loader'
         ],
-      },
-     {
+      },      {
         test: /\.vue$/,
         loader: 'vue-loader',
-		
         options: {
           loaders: {
-            // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-            // the "scss" and "sass" values for the lang attribute to the right configs here.
-            // other preprocessors should work out of the box, no loader config like this necessary.
-            'scss': [
-              'vue-style-loader',
-              'css-loader',
-            ],
-           
           }
           // other vue-loader options go here
         }
@@ -46,10 +35,12 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-					test: /\.(html|png|gif|jpg|jpeg|eto|eot|ttf|svg|woff|woff2)(\?.*)?$/,
-					exclude: /node_modules/,
-					use: ['file-loader']
-		}
+        test: /\.(html|png|gif|jpg|jpeg|eto|eot|ttf|svg|woff|woff2)(\?.*)?$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]?[hash]'
+        }
+      }
     ]
   },
   resolve: {

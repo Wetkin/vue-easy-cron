@@ -6,7 +6,7 @@
         <Form :model="formData" :rules="formDataValidator" :label-width="80">
           
           <FormItem label="原始组件(700px)" prop="cronValue2">
-            <easy-cron style="width: 700px;"  v-model="formData.cronValue2" :exeStartTime="exeStartTime"></easy-cron>
+            <EasyCron style="width: 700px;"  v-model="formData.cronValue2" :exeStartTime="exeStartTime"></EasyCron>
           </FormItem>
        
        
@@ -25,12 +25,10 @@ import Vue from 'vue'
 import EasyCron from './easy-cron'
 import InputCron from './easy-cron/input-cron'
 import CronValidator from './easy-cron/validator'
-import iView from 'iview'
-import './styles/iview.css'
 
-Vue.use(iView)
+
 export default {
-  name: 'HelloWorld',
+  name: 'easyCom',
   data () {
     return {
       msg: 'Cron表达式测试页面',
@@ -74,7 +72,7 @@ export default {
   },
   components: {
     EasyCron,
-    InputCron
+    InputCron,
   },
   created () {
     // console.info(aaa)

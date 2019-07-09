@@ -1,23 +1,26 @@
 <template>
   <div id="app">
-      <easyCorn/>
+   
+     <easyCom>
+    </easyCom>
+  
   </div>
 </template>
 
 <script>
-import easyCorn from './components/easy_corn'
+
 export default {
   name: 'app',
-  components: { easyCorn },
+
   data () {
     return {
-     
+      msg: 'Welcome to Your Vue.js App'
     }
   }
 }
 </script>
 
-<style lang="scss">
+<style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

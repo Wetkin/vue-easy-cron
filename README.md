@@ -1,4 +1,4 @@
-# vue-pay-keyboard
+# vue-easy-cron
 
 > A Vue.js project
 
