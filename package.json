@@ -1,10 +1,15 @@
 {
   "name": "vue-easy-cron",
   "description": "A vue-easy-cron project",
-  "version": "1.0.01",
+  "version": "1.0.02",
   "author": "Wetkin <631443193@qq.com>",
   "license": "MIT",
   "private": false,
+   "main": "dist/vue-easy-cron.js",
+   "repository": {
+    "type": "git",
+    "url": "https://github.com/Wetkin/vue-easy-cron"
+  },
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"

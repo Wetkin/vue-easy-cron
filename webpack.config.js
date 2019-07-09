@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-   filename: 'vue-easy-cron.js' ,
+    filename: 'vue-easy-cron.js' ,
     library: 'vue-easy-cron', 
     libraryTarget: 'umd',
 	umdNamedDefine: true 
