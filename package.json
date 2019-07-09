@@ -1,7 +1,7 @@
 {
   "name": "vue-easy-cron",
   "description": "A vue-easy-cron project",
-  "version": "1.0.0",
+  "version": "1.0.01",
   "author": "Wetkin <631443193@qq.com>",
   "license": "MIT",
   "private": false,
