@@ -1,6 +1,6 @@
-# vue-easy-cron
+# vue-easy-cron  一个简易的Cron 选择
 
-> A Vue.js project
+> 为了方便项目。而制作的一个选择cron 的小插件 。
 
 ## Build Setup
 
