@@ -13,8 +13,11 @@
         </Tabs>
       </div>
       <div class="right">
-        <div class="field-list"><Table stripe :columns="columns" :data="tableData"
-          :show-header="false" size="small"></Table></div>
+        <div class="field-list">
+        <Table stripe :columns="columns" :data="tableData" :show-header="false" size="small">
+        
+        </Table>
+          </div>
         <div class="exe-pre">
           <div class="exe-pre-panel">
             <label class="p-left">执行时间</label>
@@ -89,7 +92,37 @@ export default {
       year: '*',
       startTime: new Date(),
       preTimeList: '执行预览，会忽略年份参数',
-      columns: [{ title: ' ', width: '80', key: 'name' }, { title: ' ', key: 'value' }]
+      columns: [{ title: ' ', width: '80', key: 'name' }, { title: ' ', width: '110', key: 'value' }, {
+       title: 'Button',
+       key: 'button',
+       render: (h, params) => {
+       var html  = " "
+       if (params.index == 7 || params.index == 8) {
+                html = h('div', [
+                                h('Button', {
+                                    props: {
+                                        type: 'primary',
+                                        size: 'small'
+                                    },
+                                    style: {
+                                        marginRight: '5px'
+                                    },
+                                    on: {
+                                        click: () => {
+                                       
+                                           var value = this.tableData[params.index].value
+                                           this.$emit('cron-value', value)
+                                             
+                                        }
+                                    }
+                                }, '选择')
+         ]);
+       }
+       
+		         return html;
+                        }
+      
+      }]
     }
   },
   computed: {
@@ -147,6 +180,7 @@ export default {
     }
   },
   methods: {
+   
     formatValue () {
       // console.info(this.cronValue)
       if (!this.cronValue) return

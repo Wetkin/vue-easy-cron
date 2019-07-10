@@ -5,11 +5,9 @@
        
         <Form :model="formData" :rules="formDataValidator" :label-width="80">
           
-          <FormItem label="原始组件(700px)" prop="cronValue2">
-            <EasyCron style="width: 700px;"  v-model="formData.cronValue2" :exeStartTime="exeStartTime"></EasyCron>
+          <FormItem label="" prop="cronValue2">
+            <EasyCron style="width: 700px;"  v-model="formData.cronValue2" :exeStartTime="exeStartTime"  v-on:cron-value="getCronValue"></EasyCron>
           </FormItem>
-       
-       
        
         </Form>
       </div>
@@ -31,15 +29,12 @@ export default {
   name: 'easyCom',
   data () {
     return {
-      msg: 'Cron表达式测试页面',
-      exeStartTime: '2015-09-02 12:23:10',
+      msg: 'EasyCron',
+      exeStartTime: '2019-07-10 12:23:10',
       formData: {
-        url: 'http://www.easysb.cn',
-        qq: '34538980',
-        cronValue1: '',
-        cronValue2: '4 1/2 5 7-8 1 ?',
-        cronValue3: '1/2 5 7-8 1 ?',
-        cronValue4: '1 2-4 3/5 3/12 4,5,8 ? *'
+        cronValue2: '0 0 0/1 * * ?',
+                     
+      
       },
       formDataValidator: {
         cronValue1: [
@@ -58,6 +53,10 @@ export default {
     }
   },
   methods: {
+   getCronValue (value) {
+  
+       this.$emit('cron-value', value)
+     },
     remote (val, time, cb) {
       const msg = `remote called: ${val} ${time}`
       console.info(msg)

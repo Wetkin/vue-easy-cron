@@ -16,7 +16,12 @@
 
 new Vue({
   el: '#app',
-  template: '<easyCom></easyCom>'  
+   template: '<easyCom v-on:cron-value="getCronValue" ></easyCom>' ,
+   methods: {
+	        			        					  getCronValue( value) {
+	        			        						 alert("选择的值"+ value)
+	        			        					    }
+	        			        					  }   
 })
 </script>
 </html>
